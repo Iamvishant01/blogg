@@ -1,14 +1,13 @@
 "use client";
 
 import { useState, useEffect } from 'react'
-import { useSession } from 'next-auth/react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Form from '@components/Form'
 
-const EditPost = () => {
+const UpdatePost = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const promptId = searchParams.get('id')
+  const promptId = searchParams?.get('id')
   const [submitting, setsubmitting] = useState(false);
   const [post, setpost] = useState({
     prompt: '',
@@ -63,4 +62,4 @@ const EditPost = () => {
   )
 }
 
-export default EditPost
+export default UpdatePost
